@@ -1,0 +1,50 @@
+# ---- 系统 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- 编辑器 ----
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# ---- 环境与依赖 ----
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.local
+
+# ---- 构建产物 ----
+dist/
+build/
+out/
+*.log
+
+# ---- 数据与大文件（建议配合 Git LFS）----
+data/
+*.db
+*.sqlite3
+*.parquet
+*.ckpt
+*.safetensors
+
+# ---- 工作区元数据 ----
+.workbuddy/
+
+# ---- 归档：过程产物，不入库 ----
+archive/
+
+# ---- 生成的测试数据（用 scripts/gen_synthetic.py 重新生成）----
+fixtures/wechat-synthetic-*.csv
+.pytest_cache/
+
+# ---- 模拟账单（用 scripts/gen_realistic.py 重新生成）----
+samples/
+
+# ---- 微信开发者工具本机私有配置 ----
+project.private.config.json
