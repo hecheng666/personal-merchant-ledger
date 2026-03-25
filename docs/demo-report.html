@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026-10 经营月报</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f4f6f9;color:#1f2733;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;padding:36px 24px 56px}
+.wrap{max-width:1040px;margin:0 auto}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:24px}
+.head h1{font-size:26px;font-weight:700;letter-spacing:-.3px}
+.head .sub{color:#7a8699;font-size:13px;margin-top:6px}
+.badge{background:#e8f8ef;color:#07914a;border:1px solid #b9ebd0;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px}
+.kpi{background:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 1px 3px rgba(16,24,40,.06);border:1px solid #eef1f5}
+.kpi .label{color:#7a8699;font-size:13px;margin-bottom:8px}
+.kpi .value{font-size:25px;font-weight:700;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+.kpi .hint{color:#98a2b3;font-size:12px;margin-top:6px}
+.kpi.main{background:linear-gradient(135deg,#0dbf6a,#07a35a);border:none;color:#fff}
+.kpi.main .label,.kpi.main .hint{color:rgba(255,255,255,.82)}
+.minor{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.minor .label{color:#7a8699;font-size:13px;margin-bottom:8px}
+.minor .value{font-weight:700;letter-spacing:-.3px;font-variant-numeric:tabular-nums}
+.card{background:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 1px 3px rgba(16,24,40,.06);border:1px solid #eef1f5}
+.card h2{font-size:15px;font-weight:600;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center}
+.card h2 span{font-size:12px;color:#98a2b3;font-weight:400}
+.chart{margin-bottom:22px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:9px 4px;text-align:left;border-bottom:1px solid #f0f2f6}
+th{color:#7a8699;font-weight:500;font-size:12.5px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.total td{font-weight:700;border-bottom:none}
+tr.total td.num{color:#07914a}
+.muted{color:#98a2b3}
+.foot{margin-top:22px;color:#98a2b3;font-size:12px;line-height:1.9}
+.tag{display:inline-block;background:#fff5e6;color:#b26a00;border-radius:6px;padding:2px 8px;font-size:12px}
+.tag.red{background:#fdecec;color:#c0392b}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div>
+      <h1>2026-10 经营月报</h1>
+      <div class="sub">数据来源：微信账单 CSV · 生成于 2026-11-15 18:35</div>
+    </div>
+    <div class="badge">待确认 42 项</div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi main">
+      <div class="label">营业额合计</div>
+      <div class="value">¥61,987.95</div>
+      <div class="hint">微信净额 + 现金收入</div>
+    </div>
+    <div class="kpi">
+      <div class="label">微信净额</div>
+      <div class="value">¥50,579.95</div>
+      <div class="hint">已扣除退款 169.11</div>
+    </div>
+    <div class="kpi">
+      <div class="label">现金收入</div>
+      <div class="value">¥11,408.00</div>
+      <div class="hint">支出 2,060.00</div>
+    </div>
+    <div class="kpi">
+      <div class="label">本月结余</div>
+      <div class="value">¥17,940.48</div>
+      <div class="hint">营业额 − 进货 − 现金支出</div>
+    </div>
+  </div>
+
+  <div class="minor">
+    <div class="card"><div class="label">交易笔数</div><div class="value" style="font-size:20px">1,200</div></div>
+    <div class="card"><div class="label">进货支出</div><div class="value" style="font-size:20px">¥41,987.47</div></div>
+    <div class="card"><div class="label">待确认</div><div class="value" style="font-size:20px">106 笔</div><div class="hint muted">合计 ¥70,339.40</div></div>
+    <div class="card"><div class="label">数据质量</div><div class="value" style="font-size:20px">未识别 0 笔</div><div class="hint muted">已关闭 8 笔 · 私人往来 39 笔</div></div>
+  </div>
+
+  <div class="card chart">
+    <h2>每日营业收款 <span>微信 + 现金 · 单位：元</span></h2>
+    <svg viewBox="0 0 960 250" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="每日营业额"><line x1="56.0" y1="222.0" x2="948.0" y2="222.0" stroke="#eef1f5" stroke-width="1"/><text x="46.0" y="226.0" text-anchor="end" font-size="11" fill="#98a2b3">0.00</text><line x1="56.0" y1="170.5" x2="948.0" y2="170.5" stroke="#eef1f5" stroke-width="1"/><text x="46.0" y="174.5" text-anchor="end" font-size="11" fill="#98a2b3">1,000.00</text><line x1="56.0" y1="119.0" x2="948.0" y2="119.0" stroke="#eef1f5" stroke-width="1"/><text x="46.0" y="123.0" text-anchor="end" font-size="11" fill="#98a2b3">2,000.00</text><line x1="56.0" y1="67.5" x2="948.0" y2="67.5" stroke="#eef1f5" stroke-width="1"/><text x="46.0" y="71.5" text-anchor="end" font-size="11" fill="#98a2b3">3,000.00</text><line x1="56.0" y1="16.0" x2="948.0" y2="16.0" stroke="#eef1f5" stroke-width="1"/><text x="46.0" y="20.0" text-anchor="end" font-size="11" fill="#98a2b3">4,000.00</text><rect x="62.5" y="122.8" width="15.8" height="99.2" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="91.2" y="128.3" width="15.8" height="93.7" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="120.0" y="44.2" width="15.8" height="177.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="148.8" y="142.6" width="15.8" height="79.4" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="177.6" y="129.9" width="15.8" height="92.1" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="206.3" y="65.2" width="15.8" height="156.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="235.1" y="154.7" width="15.8" height="67.3" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="263.9" y="162.8" width="15.8" height="59.2" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="292.7" y="106.2" width="15.8" height="115.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="321.4" y="87.6" width="15.8" height="134.4" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="350.2" y="142.0" width="15.8" height="80.0" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="379.0" y="86.2" width="15.8" height="135.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="407.8" y="99.7" width="15.8" height="122.3" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="436.5" y="156.3" width="15.8" height="65.7" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="465.3" y="120.9" width="15.8" height="101.1" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="494.1" y="148.2" width="15.8" height="73.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="522.9" y="123.2" width="15.8" height="98.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="551.6" y="104.7" width="15.8" height="117.3" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="580.4" y="120.3" width="15.8" height="101.7" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="609.2" y="96.9" width="15.8" height="125.1" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="638.0" y="103.8" width="15.8" height="118.2" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="666.7" y="110.2" width="15.8" height="111.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="695.5" y="130.7" width="15.8" height="91.3" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="724.3" y="94.0" width="15.8" height="128.0" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="753.1" y="54.7" width="15.8" height="167.3" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="781.8" y="161.8" width="15.8" height="60.2" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="810.6" y="147.1" width="15.8" height="74.9" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="839.4" y="156.7" width="15.8" height="65.3" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="868.2" y="125.2" width="15.8" height="96.8" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="896.9" y="146.8" width="15.8" height="75.2" rx="3" fill="#0dbf6a" opacity=".9"/><rect x="925.7" y="222.0" width="15.8" height="0.0" rx="3" fill="#0dbf6a" opacity=".9"/><text x="70.4" y="242.0" text-anchor="middle" font-size="11" fill="#98a2b3">1</text><text x="185.5" y="242.0" text-anchor="middle" font-size="11" fill="#98a2b3">5</text><text x="329.4" y="242.0" text-anchor="middle" font-size="11" fill="#98a2b3">10</text><text x="473.2" y="242.0" text-anchor="middle" font-size="11" fill="#98a2b3">15</text><text x="617.1" y="242.0" text-anchor="middle" font-size="11" fill="#98a2b3">20</text><text x="761.0" y="242.0" text-anchor="middle" font-size="11" fill="#98a2b3">25</text><text x="904.8" y="242.0" text-anchor="middle" font-size="11" fill="#98a2b3">30</text></svg>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>收入构成</h2>
+      <table>
+        <tr><th>项目</th><th class="num">金额（元）</th></tr>
+        <tr><td>微信营业收款</td><td class="num ">50,749.06</td></tr><tr><td>退款冲销</td><td class="num muted">-169.11</td></tr>
+        <tr class="total"><td>微信净额</td><td class="num">50,579.95</td></tr>
+        <tr><td>现金收入</td><td class="num">11,408.00</td></tr>
+        <tr class="total"><td>营业额合计</td><td class="num">61,987.95</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>支出与结余</h2>
+      <table>
+        <tr><th>项目</th><th class="num">金额（元）</th></tr>
+        <tr><td>进货支出（已确认转账）</td><td class="num">41,987.47</td></tr>
+        <tr><td>现金支出</td><td class="num">2,060.00</td></tr>
+        <tr><td>退款冲销</td><td class="num">169.11</td></tr>
+        <tr class="total"><td>本月结余</td><td class="num">17,940.48</td></tr>
+      </table>
+      <div class="foot">待确认金额 ¥70,339.40，确认后会重新计入上表。</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>待确认清单 <span>按对手方聚合 · 一点归类，之后自动记住</span></h2>
+    <table>
+      <tr><th>对手方</th><th class="num">笔数</th><th class="num">金额（收 / 支）</th><th class="num">首次出现</th></tr>
+      <tr><td>供货商13</td><td class="num">8</td><td class="num">收 561.55 / 支 7,999.75</td><td class="num muted">10-02</td></tr><tr><td>供货商19</td><td class="num">3</td><td class="num">支 8,334.54</td><td class="num muted">10-14</td></tr><tr><td>供货商03</td><td class="num">3</td><td class="num">收 22.40 / 支 7,544.33</td><td class="num muted">10-17</td></tr><tr><td>供货商12</td><td class="num">2</td><td class="num">支 6,667.53</td><td class="num muted">10-18</td></tr><tr><td>供货商09</td><td class="num">3</td><td class="num">收 33.15 / 支 6,280.60</td><td class="num muted">10-06</td></tr><tr><td>供货商06</td><td class="num">5</td><td class="num">收 125.17 / 支 5,580.07</td><td class="num muted">10-01</td></tr><tr><td>供货商05</td><td class="num">5</td><td class="num">收 47.44 / 支 5,200.97</td><td class="num muted">10-01</td></tr><tr><td>供货商11</td><td class="num">2</td><td class="num">收 126.57 / 支 4,836.00</td><td class="num muted">10-03</td></tr><tr><td colspan="4" class="muted">另有 34 个对手方未展示，完整清单见命令行 pending</td></tr>
+    </table>
+  </div>
+
+  <div class="foot">
+    口径：营业额 = 微信营业收款 − 退款 + 现金收入；结余 = 营业额 − 进货支出 − 现金支出。<br>
+    退款与已关闭交易只标记不删除，可在明细里查到；未识别类型不计入营业额，需人工确认。
+  </div>
+</div>
+</body>
+</html>
