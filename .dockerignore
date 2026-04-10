@@ -1,0 +1,13 @@
+.git
+.gitignore
+data
+samples
+out
+archive
+tests
+fixtures
+docs
+*.pyc
+__pycache__
+.pytest_cache
+*.db
