@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pending/pending",
+    "pages/report/report"
+  ],
+  "window": {
+    "navigationBarTitleText": "记账对账",
+    "navigationBarBackgroundColor": "#07C160",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f4f6f9"
+  },
+  "tabBar": {
+    "color": "#8a94a6",
+    "selectedColor": "#07C160",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "导入"
+      },
+      {
+        "pagePath": "pages/pending/pending",
+        "text": "待确认"
+      },
+      {
+        "pagePath": "pages/report/report",
+        "text": "月报"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

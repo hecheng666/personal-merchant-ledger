@@ -1,0 +1,36 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-title">待确认</view>
+    <view class="hero-sub">按人归好了，点一下选它属于哪类，以后同一个人自动记住</view>
+  </view>
+
+  <view class="card" wx:if="{{loading}}">
+    <view class="empty">加载中…</view>
+  </view>
+
+  <view class="card" wx:elif="{{items.length === 0}}">
+    <view class="empty">没有待确认的转账，账已经对齐</view>
+  </view>
+
+  <view class="card" wx:else>
+    <view class="card-title">
+      <text>共 {{total}} 个对手方</text>
+      <text class="hint">点一行去归类</text>
+    </view>
+    <view
+      class="peer"
+      wx:for="{{items}}"
+      wx:key="peer"
+      data-peer="{{item.peer}}"
+      bindtap="classify"
+    >
+      <view class="peer-main">
+        <view class="peer-name">{{item.peer || '（空昵称）'}}</view>
+        <view class="peer-meta">{{item.count}} 笔 · 首次 {{item.first_time}}</view>
+      </view>
+      <view class="peer-amount">{{item.amount_text}}</view>
+    </view>
+  </view>
+
+  <view class="tip">确认过的对手方会记在服务端，下次导入同一批数据不会再问。</view>
+</view>

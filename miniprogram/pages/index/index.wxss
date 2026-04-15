@@ -1,0 +1,10 @@
+.action-row {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 28rpx;
+}
+
+.action-row .half {
+  flex: 1;
+  margin: 0;
+}

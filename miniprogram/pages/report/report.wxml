@@ -1,0 +1,101 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-title">经营月报</view>
+    <view class="hero-sub">营业额 = 微信营业收款 − 退款 + 现金收入</view>
+  </view>
+
+  <view class="card" wx:if="{{months.length === 0}}">
+    <view class="empty">还没有数据，先去「导入」传一份账单</view>
+  </view>
+
+  <block wx:else>
+    <picker mode="selector" range="{{months}}" value="{{monthIndex}}" bindchange="changeMonth">
+      <view class="month-picker">
+        <text>{{month}}</text>
+        <text class="month-arrow">切换月份 ›</text>
+      </view>
+    </picker>
+
+    <view class="kpi-grid" wx:if="{{report}}">
+      <view class="kpi main">
+        <view class="kpi-label">营业额合计</view>
+        <view class="kpi-value">¥{{report.revenue_total}}</view>
+        <view class="kpi-hint">微信净额 + 现金收入</view>
+      </view>
+      <view class="kpi">
+        <view class="kpi-label">微信净额</view>
+        <view class="kpi-value">¥{{report.wechat_net}}</view>
+        <view class="kpi-hint">已扣退款 {{report.refund}}</view>
+      </view>
+      <view class="kpi">
+        <view class="kpi-label">现金收入</view>
+        <view class="kpi-value">¥{{report.cash_income}}</view>
+        <view class="kpi-hint">支出 {{report.cash_expense}}</view>
+      </view>
+      <view class="kpi">
+        <view class="kpi-label">本月结余</view>
+        <view class="kpi-value">¥{{report.balance}}</view>
+        <view class="kpi-hint">营业额 − 进货 − 现金支出</view>
+      </view>
+    </view>
+
+    <view class="card" wx:if="{{report}}">
+      <view class="card-title">
+        <text>每日营业收款</text>
+        <text class="hint">微信 + 现金 · 元</text>
+      </view>
+      <view class="chart">
+        <view class="bar-wrap" wx:for="{{bars}}" wx:key="day">
+          <view class="bar" style="height: {{item.h}}%"></view>
+        </view>
+      </view>
+      <view class="chart-axis">
+        <text>1</text>
+        <text>{{bars.length}}</text>
+      </view>
+    </view>
+
+    <view class="card" wx:if="{{report}}">
+      <view class="card-title">收入构成</view>
+      <view class="row"><text class="label">微信营业收款</text><text class="value">{{report.gross_business}}</text></view>
+      <view class="row"><text class="label">退款冲销</text><text class="value">-{{report.refund}}</text></view>
+      <view class="row"><text class="label">微信净额</text><text class="value">{{report.wechat_net}}</text></view>
+      <view class="row"><text class="label">现金收入</text><text class="value">{{report.cash_income}}</text></view>
+      <view class="row"><text class="label">营业额合计</text><text class="value strong">{{report.revenue_total}}</text></view>
+    </view>
+
+    <view class="card" wx:if="{{report}}">
+      <view class="card-title">支出与数据质量</view>
+      <view class="row"><text class="label">进货支出</text><text class="value">{{report.purchase_expense}}</text></view>
+      <view class="row"><text class="label">现金支出</text><text class="value">{{report.cash_expense}}</text></view>
+      <view class="row"><text class="label">待确认</text><text class="value">{{report.pending_peers}} 个对手方 / {{report.pending_count}} 笔</text></view>
+      <view class="row"><text class="label">未识别类型</text><text class="value">{{report.unknown_count}} 笔</text></view>
+      <view class="row"><text class="label">已关闭</text><text class="value">{{report.closed_count}} 笔</text></view>
+      <view class="row"><text class="label">私人往来</text><text class="value">{{report.private_count}} 笔</text></view>
+    </view>
+
+    <view class="card">
+      <view class="card-title">
+        <text>现金补录</text>
+        <text class="hint">一天一个数，重复录入是覆盖</text>
+      </view>
+      <picker mode="date" value="{{cashDate}}" bindchange="bindDate">
+        <view class="cash-date">{{cashDate}}</view>
+      </picker>
+      <view class="cash-row">
+        <input
+          class="cash-input"
+          type="digit"
+          placeholder="金额，例如 380"
+          value="{{cashAmount}}"
+          bindinput="bindAmount"
+        />
+        <view class="cash-toggle">
+          <view class="toggle {{cashDirection === 'income' ? 'on' : ''}}" bindtap="setIncome">收入</view>
+          <view class="toggle {{cashDirection === 'expense' ? 'on' : ''}}" bindtap="setExpense">支出</view>
+        </view>
+      </view>
+      <button class="btn primary" style="margin-top: 20rpx" bindtap="saveCash">保存现金</button>
+    </view>
+  </block>
+</view>
